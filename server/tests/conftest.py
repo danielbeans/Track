@@ -1,4 +1,5 @@
 from api import create_app
+from api.models import User
 import pytest
 
 
@@ -15,9 +16,17 @@ def test_client():
 
 @pytest.fixture()
 def new_user():
+    user = User(name='John Doe', nickname='John',
+                email='john@gmail.com', password='password')
+
+    return user
+
+
+@pytest.fixture()
+def login_user():
     user = {
-        'name': 'John',
-        'email': 'johndoe@gmail.com'
+        'email': 'john@gmail.com',
+        'password': 'password'
     }
 
     return user

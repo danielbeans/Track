@@ -16,17 +16,15 @@ def test_client():
 
 @pytest.fixture()
 def new_user():
-    user = User(name='John Doe', nickname='John',
-                email='john@gmail.com', password='password')
+    user = User(
+        name="John Doe", nickname="John", email="john@gmail.com", password="password"
+    )
 
     return user
 
 
 @pytest.fixture()
 def login_user():
-    user = {
-        'email': 'john@gmail.com',
-        'password': 'password'
-    }
+    user = {"email": "john@gmail.com", "password": "password"}
 
     return user
